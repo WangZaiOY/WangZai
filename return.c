@@ -142,3 +142,32 @@ int main(void)
 
 	return 0;
 }
+
+
+
+#include <stdio.h>
+            /*C Primer plus 3.11 编程练习 23/1/6 */
+int main()
+{
+    printf("%d\n", sizeof(short));
+    printf("%d\n", sizeof(int));
+    printf("%d\n", sizeof(long));
+    printf("%d\n", sizeof(long long));
+    /*整数上溢*/
+    int a = 2147483647;
+    int b;
+    b = a + 1;
+    printf("%d\n%d", a, b);
+    /*ASCII码转换*/
+    char ASC;
+    int ASCII;
+    printf("\n\n请输入一个ASCII码值：");
+    scanf_s("%d", &ASCII);
+    ASC = ASCII;
+    printf("该输入值代表字符为%c", ASC);
+    printf("\a");
+    printf("\nStartled by the  sudden sound, Sally shouted,");
+    printf("By the great Pumpkin ,what was that!");
+
+    return 0;
+}
