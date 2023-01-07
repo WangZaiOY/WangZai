@@ -171,3 +171,38 @@ int main()
 
     return 0;
 }
+
+
+
+#include <stdio.h>
+                     //C Primer plus 4.8 编程作业 23/1/7
+int main()
+{
+    float pai;
+    pai=3.14f;
+    printf("**%5.3f**",pai);
+    return 0;
+}
+
+
+#include <stdio.h>
+#define JL 3.785
+#define YL 1.609
+
+int main()
+{
+    float jlz,l;
+    float ylz,km;
+    float mkm,yh;
+    printf("请输入加仑值：");
+    scanf("%f",&jlz);
+    printf("请输入英里值：");
+    scanf("%f",&ylz);
+    l=jlz*JL;
+    km=ylz*YL;
+    mkm=l/km;
+    yh=100*l;
+    printf("你的的油耗为：%0.1f升每100公里.",yh);
+
+    return 0;
+}
