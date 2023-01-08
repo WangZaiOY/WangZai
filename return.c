@@ -206,3 +206,32 @@ int main()
 
     return 0;
 }
+
+
+
+#include <stdio.h>
+                    //C Primer plus 5.11 编程练习 23/1/8
+void Temperatures(double n);
+double hs, ks, ss;
+int x=1;
+int main()
+  {
+    printf("****************你好!****************\n");
+    while (x==1)
+    { 
+        printf("请输入一个华氏温度值：");
+        x = scanf_s("%lf", &hs);
+        Temperatures(hs);
+        printf("华氏度: %f °C\n", hs);
+        printf("摄氏度: %f ℉\n", ss);
+        printf("开氏度: %f K\n", ks);
+        printf("******输入任意非数字字符可退出******\n");
+    }
+    printf("**************退出成功！**************");
+}
+
+void Temperatures(double n)
+{
+    ss = 5.0 / 9.0 * (n - 32.0);
+    ks = ss + 273.16;
+}
