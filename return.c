@@ -235,3 +235,36 @@ void Temperatures(double n)
     ss = 5.0 / 9.0 * (n - 32.0);
     ks = ss + 273.16;
 }
+
+
+
+#include <stdio.h>
+                 //C Primer plus 6.7 编程学习 23/1/9
+int main()
+{
+    char mz[16];
+    int qjs;
+    int yjs;
+    int sys;
+    printf("你好，这里是电子代敲，专业代敲木鱼30年\n");
+    printf("请输入您的名字：");
+    scanf("%s",mz);
+    printf("好的，已经收到了！\n");
+    for(int zyjs=0;zyjs<9981;)
+    {
+        printf("请输入要代敲多少下电子木鱼：");
+        scanf_s("%d",&qjs);
+        printf("好的，已经收到！\n");
+        yjs=0;
+        while(yjs++<=qjs)
+        {
+            printf("%s已敲电子木鱼%d下\n", mz, yjs);
+        }
+        printf("施主，已为你代敲完成，还多送你一个！欢迎再次光临！！！\n");
+        zyjs=zyjs+yjs-1;
+        sys=9981-zyjs;
+        printf("你已累计敲击%d下，还剩%d累计敲9981下可获得赛博真经哦(⊙o⊙)！\n",zyjs,sys);
+    }
+    printf("赛博如来表示：你以修成正果，取得赛博真经！\n可以滚了。");
+    return 0;
+}
