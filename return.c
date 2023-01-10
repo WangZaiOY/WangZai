@@ -268,3 +268,20 @@ int main()
     printf("赛博如来表示：你以修成正果，取得赛博真经！\n可以滚了。");
     return 0;
 }
+
+
+
+#include <stdio.h>
+           //C Primer plus 6.16 编程练习 23/1/10
+int main()
+{
+    int dys=0;
+    int pys=5;
+    do{
+        dys++;
+        pys=pys-dys;
+        pys*=2;
+        printf("第%d周朋友数为%d\n",dys,pys);
+    } while (pys<=150);
+    return 0;
+}
