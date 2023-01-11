@@ -285,3 +285,46 @@ int main()
     } while (pys<=150);
     return 0;
 }
+
+
+
+#include <stdio.h>
+                   //C Primer Plus 7.3.4 编程学习 23/1/11
+int main()
+{
+    int a;
+    int b;
+    printf("请输入一个数让别人猜：");
+    scanf_s("%d",&b);
+    printf("\n猜是多少：");
+    do
+    {
+        scanf_s("%d",&a);
+        if(a<b&&2*a<b)
+        {
+            printf("小得离谱了\n再猜：");
+        }
+        else if(a<b&&1.5*a<b)
+        {
+            printf("小了小了\n再猜：");
+        }
+        else if(a<b)
+        {
+            printf("就差一点了，还是小了\n再猜：");
+        }
+        else if(a>b)
+        {
+            printf("相差不大了，但还是大了\n再猜：");
+        }
+        else if(a>b&&0.2*a>b)
+        {
+            printf("大了大了\n再猜：");
+        }
+        else if(a>b&&0.5*a>b)
+        {
+            printf("太TM大了\n再猜：");
+        }
+    }while(a!=b);
+    printf("恭喜你猜到正确答案，就是%d",b);
+    return 0;
+}
