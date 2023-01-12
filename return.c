@@ -210,128 +210,6 @@ int main()
 
 
 #include <stdio.h>
-                    //C Primer plus 5.11 编程练习 23/1/8
-void Temperatures(double n);
-double hs, ks, ss;
-int x=1;
-int main()
-  {
-    printf("****************你好!****************\n");
-    while (x==1)
-    { 
-        printf("请输入一个华氏温度值：");
-        x = scanf_s("%lf", &hs);
-        Temperatures(hs);
-        printf("华氏度: %f °C\n", hs);
-        printf("摄氏度: %f ℉\n", ss);
-        printf("开氏度: %f K\n", ks);
-        printf("******输入任意非数字字符可退出******\n");
-    }
-    printf("**************退出成功！**************");
-}
-
-void Temperatures(double n)
-{
-    ss = 5.0 / 9.0 * (n - 32.0);
-    ks = ss + 273.16;
-}
-
-
-
-#include <stdio.h>
-                 //C Primer plus 6.7 编程学习 23/1/9
-int main()
-{
-    char mz[16];
-    int qjs;
-    int yjs;
-    int sys;
-    printf("你好，这里是电子代敲，专业代敲木鱼30年\n");
-    printf("请输入您的名字：");
-    scanf("%s",mz);
-    printf("好的，已经收到了！\n");
-    for(int zyjs=0;zyjs<9981;)
-    {
-        printf("请输入要代敲多少下电子木鱼：");
-        scanf_s("%d",&qjs);
-        printf("好的，已经收到！\n");
-        yjs=0;
-        while(yjs++<=qjs)
-        {
-            printf("%s已敲电子木鱼%d下\n", mz, yjs);
-        }
-        printf("施主，已为你代敲完成，还多送你一个！欢迎再次光临！！！\n");
-        zyjs=zyjs+yjs-1;
-        sys=9981-zyjs;
-        printf("你已累计敲击%d下，还剩%d累计敲9981下可获得赛博真经哦(⊙o⊙)！\n",zyjs,sys);
-    }
-    printf("赛博如来表示：你以修成正果，取得赛博真经！\n可以滚了。");
-    return 0;
-}
-
-
-
-#include <stdio.h>
-           //C Primer plus 6.16 编程练习 23/1/10
-int main()
-{
-    int dys=0;
-    int pys=5;
-    do{
-        dys++;
-        pys=pys-dys;
-        pys*=2;
-        printf("第%d周朋友数为%d\n",dys,pys);
-    } while (pys<=150);
-    return 0;
-}
-
-
-
-#include <stdio.h>
-                   //C Primer Plus 7.3.4 编程学习 23/1/11
-int main()
-{
-    int a;
-    int b;
-    printf("请输入一个数让别人猜：");
-    scanf_s("%d",&b);
-    printf("\n猜是多少：");
-    do
-    {
-        scanf_s("%d",&a);
-        if(a<b&&2*a<b)
-        {
-            printf("小得离谱了\n再猜：");
-        }
-        else if(a<b&&1.5*a<b)
-        {
-            printf("小了小了\n再猜：");
-        }
-        else if(a<b)
-        {
-            printf("就差一点了，还是小了\n再猜：");
-        }
-        else if(a>b)
-        {
-            printf("相差不大了，但还是大了\n再猜：");
-        }
-        else if(a>b&&0.2*a>b)
-        {
-            printf("大了大了\n再猜：");
-        }
-        else if(a>b&&0.5*a>b)
-        {
-            printf("太TM大了\n再猜：");
-        }
-    }while(a!=b);
-    printf("恭喜你猜到正确答案，就是%d",b);
-    return 0;
-}
-
-
-
-#include <stdio.h>
 #define YY 2.05
 #define TC 1.15
 #define HLB 1.09
@@ -339,73 +217,78 @@ int main()
 #define SW 6.5
 #define SE 14
 #define XY 0.5
-                   //C Primer Plus 7.12 编程练习 23/1/12
+                  //C Primer Plus 7.12 编程练习 23/1/12 修改版
 int main()
 {
     char xx;
     float yyb, tcb, hlbb;
-    float yyq=0, tcq=0, hlbq=0, zq=0, zqz=0, zqzz=0;
+    float yyq = 0, tcq = 0, hlbq = 0, zq = 0, zqz = 0, zqzz = 0;
     float yybz = 0.00f, tcbz = 0.00f, hlbbz = 0.00f, zljb = 0.00f;
-    int yys=0, tcs=0, hlbs=0;
+    int yys = 0, tcs = 0, hlbs = 0;
     float zk, yf;
+    printf("请输入商品代号（a.洋芋 b.甜菜 c.胡萝卜）：");
     do
     {
-        printf("请输入商品代号（a.洋芋 b.甜菜 c.胡萝卜）：");
-        xx = getchar();
-        switch (xx)
+        if ((xx=getchar()) != '\n')
         {
-        case 'a':
-            printf("请输入洋芋磅数：");
-            scanf_s("%f", &yyb);
-            yybz += yyb;
-            yyq = yybz * YY;
-            yys++;
-            continue;
-        case 'b':
-            printf("请输入甜菜磅数：");
-            scanf_s("%f", &tcb);
-            tcbz += tcb;
-            tcq = tcbz * TC;
-            tcs++;
-            continue;
-        case 'c':
-            printf("请输入胡萝卜磅数：");
-            scanf_s("%f", &hlbb);
-            hlbbz += hlbb;
-            hlbq = hlbbz * HLB;
-            hlbs++;
-            continue;
-        default:
-            break;
+            switch (xx)
+            {
+                case 'a':
+                    printf("请输入洋芋磅数：");
+                    scanf_s("%f", &yyb);
+                    yybz += yyb;
+                    yyq = yybz * YY;
+                    yys++;
+                    printf("请输入商品代号（a.洋芋 b.甜菜 c.胡萝卜）：");
+                    continue;
+                case 'b':
+                    printf("请输入甜菜磅数：");
+                    scanf_s("%f", &tcb);
+                    tcbz += tcb;
+                    tcq = tcbz * TC;
+                    tcs++;
+                    printf("请输入商品代号（a.洋芋 b.甜菜 c.胡萝卜）：");
+                    continue;
+                case 'c':
+                    printf("请输入胡萝卜磅数：");
+                    scanf_s("%f", &hlbb);
+                    hlbbz += hlbb;
+                    hlbq = hlbbz * HLB;
+                    hlbs++;
+                    printf("请输入商品代号（a.洋芋 b.甜菜 c.胡萝卜）：");
+                    continue;
+                default:
+                    break;
+            }
         }
-        zljb = yybz + tcbz + hlbbz;
-        if (zljb <= 5)
-        {
-            yf = SW;
-        }
-        else if (zljb > 5 && zljb <= 20)
-        {
-            yf = SE;
-        }
-        else if (zljb > 20)
-        {
-            yf = SE + (zljb - 20) * XY;
-        }
-        zq = yyq + tcq + hlbq;
-        if (zq >= 100)
-        {
-            zqz = zq * ZK;
-            zk = ZK * 10;
-        }
-        else
-            zk = 0;
-        zqzz = zqz + yf;
     } while (xx != 'q');
+    zljb = yybz + tcbz + hlbbz;
+    if (zljb <= 5)
+    {
+        yf = SW;
+    }
+    else if (zljb > 5 && zljb <= 20)
+    {
+        yf = SE;
+    }
+    else if (zljb > 20)
+    {
+        yf = SE + (zljb - 20) * XY;
+    }
+    zq = yyq + tcq + hlbq;
+    if (zq >= 100)
+    {
+        zqz = zq * ZK;
+        zk = ZK * 10;
+    }
+    else
+        zk = 0;
+    zqzz = zqz + yf;
     printf("退出成功,已经为你计算总结果：\n");
     printf("商品售价 商品名 商品总重 商品总价 你的折扣 包装费与运费\n");
-    printf("  YY     洋芋    %f     %f            \n", yybz, yyq);
-    printf("  TC     甜菜    %f     %f      %f      %f\n", tcbz, tcq, zk, yf);
-    printf("  HLB    胡萝卜   %f     %f            \n", hlbbz, hlbq);
+    printf("  YY     洋芋    %0.2f     %0.2f            \n", yybz, yyq);
+    printf("  TC     甜菜    %0.2f     %0.2f    %0.2f    %0.2f\n", tcbz, tcq, zk, yf);
+    printf("  HLB   胡萝卜  %0.2f     %0.2f            \n", hlbbz, hlbq);
     printf("你的总商品价格为：%f\n", zqzz);
     return 0;
 }
