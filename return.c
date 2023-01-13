@@ -217,7 +217,7 @@ int main()
 #define SW 6.5
 #define SE 14
 #define XY 0.5
-                  //C Primer Plus 7.12 编程练习 23/1/12 修改版
+                  //C Primer Plus 7.12 编程练习 23/1/12 输入验证修改版
 int main()
 {
     char xx;
