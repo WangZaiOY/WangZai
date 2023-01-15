@@ -396,3 +396,33 @@ float js(float szo,float szt,char ysf)
     }
     return jg;
 }
+
+
+
+#include <stdio.h>
+                        // C Primer Plus 9.11 编程练习 23/1/15
+void jz_zh(int c,int d);
+int main()
+{
+    int a;
+    int b;
+    _Bool x=1;
+    while (x)
+    {
+        printf("请输入你要转换进制的数(a)和要转换为什么进制(b)（例：a b）：");
+        x=scanf_s("%d %d", &a, &b);
+        printf("得：");
+        jz_zh(a, b);
+        printf("\n");
+    }
+        return 0;
+}
+
+void jz_zh(int c,int d)
+{
+    int ys;
+    ys=c%d;
+    if(c>=d)
+        jz_zh(c/d,d);
+    printf("%d",ys);
+}
