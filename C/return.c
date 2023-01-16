@@ -426,3 +426,36 @@ void jz_zh(int c,int d)
         jz_zh(c/d,d);
     printf("%d",ys);
 }
+
+
+
+#include <stdio.h>
+#define SZ 10
+                     //C Primer plus 10.4 编程学习 23/1/16
+void px(int*a,int*b);
+int main()
+{
+    int sy=0;
+    int yz;
+    int csz[SZ];
+    printf("请依次输入0~10个数，系统将自动为你排序(至少输入2个数，不守规矩默认退出)：\n请输入：");
+    yz=scanf_s("%d",&csz[sy]);
+    for(sy=1;yz==1&&sy<=SZ-1;sy++)
+    {
+        printf("继续输入（结束请按q）：");
+        yz=scanf_s("%d", &csz[sy]);
+    }
+    sy-=1;
+    printf("\n你输入了%d个数字，如果有漏的，那就是你的问题，与程序无关.",sy);
+    px(csz,csz+(sy-1));
+    return 0;
+}
+
+void px(int*a,int*b)
+{
+    if(a<b)
+    {
+        px(a+1, b - 1);
+        printf("b=%d",*b);
+    }
+}
