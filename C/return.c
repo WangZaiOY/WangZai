@@ -459,3 +459,118 @@ void px(int*a,int*b)
         printf("b=%d",*b);
     }
 }
+
+
+
+#include <stdio.h>
+                      //2023.3.14 之前代码修改完善
+float szy, sze;
+char xzx;
+
+int cd(void);
+void sz_yz(_Bool o, _Bool t, char yxx);
+float js(float szo, float szt, char ysf);
+
+int main()
+{
+    _Bool o, t;
+    float zzz;
+
+    while (1)
+    {
+        printf("********************\n");
+        printf("* a.加法    b.减法  *\n");
+        printf("* c.乘法    d.除法  *\n");
+        printf("********************\n");
+        printf("请选择运算法并输入前面字母选项：");
+
+        xzx = (char)cd();
+        if (xzx == 'q')
+            break;
+        else {
+            printf("请输入一个数：");
+            o = scanf_s("%f", &szy);
+            printf("再输入一个数(当第一个数输入错误将自动跳过)：");
+            t = scanf_s("%f", &sze);
+            sz_yz(o, t, xzx);
+            printf("正在为你计算结果......\n");
+            zzz = js(szy, sze, xzx);
+            printf("结果为：%0.2f\n", zzz);
+            while (getchar() == '\n')
+                break;
+            printf("\n\n\n\n");
+        }
+    }
+    return 0;
+}
+
+int cd(void)
+{
+    int xx;
+    while ((xx = getchar()) != '\n')
+    {
+        if (xx == 'a' || xx == 'b' || xx == 'c' || xx == 'd' || xx == 'q')
+            break;
+        else
+        {
+            printf("\nsorry，你的输入有误，请重新输入：");
+            while (getchar() != '\n')
+                continue;
+            continue;
+        }
+    }
+    if (xx == '\n')
+        return cd();
+    return xx;
+}
+
+void sz_yz(_Bool o, _Bool t, char yxx)
+{
+    while (!o)
+    {
+        printf("\n你输入的第一个数有误，请重新输入：");
+        while (getchar() != '\n')
+            continue;
+        o = scanf_s("%f", &szy);
+    }
+    while (!t)
+    {
+        printf("\n你输入的第二个数有误(或应前面输入有误)，请重新输入：");
+        while (getchar() != '\n')
+            continue;
+        t = scanf_s("%f", &sze);
+    }
+    while (t)
+    {
+        if (sze == 0 && yxx == 'd')
+        {
+            printf("\nsorry，你输入的除数为0，不用计算。请重新输入：");
+            t = scanf_s("%f", &sze);
+        }
+        else
+            break;
+    }
+}
+
+float js(float szo, float szt, char ysf)
+{
+    float jg;
+    switch (ysf) {
+        case 'a':
+            jg = szo + szt;
+            break;
+        case 'b':
+            jg = szo - szt;
+            break;
+        case 'c':
+            jg = szo * szt;
+            break;
+        case 'd':
+            jg = szo / szt;
+            break;
+        default:
+            jg = 0;
+            break;
+    }
+    return jg;
+}
